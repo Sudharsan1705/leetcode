@@ -6,7 +6,7 @@ class Solution {
         int n=arr.length;
         for(int i=0;i<n;i++){
             if(!map.containsKey(arr[i])){
-                map.put(arr[i],new LinkedHashSet<>());
+                map.put(arr[i],new HashSet<>());
             }
             map.get(arr[i]).add(i);
         }
