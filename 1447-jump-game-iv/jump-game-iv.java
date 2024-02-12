@@ -2,11 +2,11 @@ class Solution {
     public int minJumps(int[] arr) {
         Queue<Integer> q = new LinkedList<>();
         q.add(0);
-        Map<Integer,Set<Integer>> map = new HashMap<>();
+        Map<Integer,List<Integer>> map = new HashMap<>();
         int n=arr.length;
         for(int i=0;i<n;i++){
             if(!map.containsKey(arr[i])){
-                map.put(arr[i],new HashSet<>());
+                map.put(arr[i],new ArrayList<>());
             }
             map.get(arr[i]).add(i);
         }
@@ -29,7 +29,7 @@ class Solution {
                    s.add(in+1);
                }
                if(!set.contains(in)){
-               Set<Integer> num=map.get(arr[in]);
+               List<Integer> num=map.get(arr[in]);
                for(int i:num){
                    if(!s.contains(i)){
                        q.add(i);
