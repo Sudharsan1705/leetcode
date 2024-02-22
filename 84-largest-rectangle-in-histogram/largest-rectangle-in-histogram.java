@@ -6,24 +6,28 @@ class Solution {
         Stack<Integer> st = new Stack<>();
         for(int i=0;i<n;i++){
             while(!st.isEmpty() && nums[st.peek()]>nums[i]){
-                arr[st.peek()]=nums[st.peek()]*(i-st.peek());
+                int p=st.peek();
+                arr[p]=nums[p]*(i-p);
                 st.pop();
             }
             st.push(i);
         }
         while(!st.isEmpty()){
-            arr[st.peek()]=nums[st.peek()]*(n-st.peek());
+            int p=st.peek();
+            arr[p]=nums[p]*(n-p);
             st.pop();
         }
         for(int i=n-1;i>=0;i--){
             while(!st.isEmpty() && nums[st.peek()]>nums[i]){
-                res=Math.max(res,(nums[st.peek()]*(st.peek()-i))+arr[st.peek()]-nums[st.peek()]);
+                int p=st.peek();
+                res=Math.max(res,(nums[p]*(p-i-1))+arr[p]);
                 st.pop();
             }
             st.push(i);
         }
         while(!st.isEmpty()){
-            res=Math.max(res,(nums[st.peek()]*(st.peek()+1))+arr[st.peek()]-nums[st.peek()]);
+            int p=st.peek();
+            res=Math.max(res,(nums[p]*(p))+arr[p]);
             st.pop();
         }
         return res;
