@@ -18,8 +18,8 @@ class Solution {
     Map<Integer,Integer> map;
     public void traverse(TreeNode root){
         if(root!=null){
-            l.add(root.val);
             traverse(root.left);
+            l.add(root.val);
             traverse(root.right);
         }
     }
@@ -34,7 +34,7 @@ class Solution {
         l=new ArrayList<>();
         map= new HashMap<>();
         traverse(root);
-        Collections.sort(l);
+      //  Collections.sort(l);
         int size=l.size();
         int sum=0;
         for(int i=size-1;i>=0;i--){
