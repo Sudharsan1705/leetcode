@@ -10,7 +10,7 @@ class Solution {
         }
         int in=1;
         while(p.size()>0){
-         PriorityQueue<int[]> q = new PriorityQueue<>((a,b)->  b[1]-a[1]);
+         List<int[]> q = new ArrayList<>();
          while(p.size()>0){
             int arr[]=p.poll();
             if(arr[2] == 0 || in-arr[2]>n){
