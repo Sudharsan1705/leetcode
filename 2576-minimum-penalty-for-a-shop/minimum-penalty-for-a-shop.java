@@ -18,7 +18,7 @@ class Solution {
            }
            pre[i]+=count;
         }
-        System.out.println(Arrays.toString(pre));
+        //System.out.println(Arrays.toString(pre));
         int res=0;
         for(int i=0;i<n;i++){
             if(min>pre[i]){
